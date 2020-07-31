@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        font-family: "Kanit";
+      }
+
+      .container {
+        max-width: 600px;
+        margin-right: 0px;
+        border-radius: 45px;
+        -webkit-box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.75);
+      }
+      .triangbg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .logoSection {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        width: 50%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        border-radius: 0;
+        margin-left: 2%;
+        margin-top: 3%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 1%;
+        margin-top: 3%;
+        color: white;
+      }
+
+      .spImg {
+        position: absolute;
+        top: 175px;
+        left: 40px;
+        z-index: -2;
+      }
+      .form-control {
+        border-color: #b52032;
+        border-radius: 15px;
+      }
+      label {
+        font-weight: bold;
+      }
+      /* css for typewriter effect */
+
+      .TypeWriter {
+        position: absolute;
+        top: 150px;
+        left: 20px;
+        font-size: 26px;
+        opacity: 100%;
+      }
+      .typed-text {
+        color: #b52032;
+      }
+      p span.TypeCursor {
+        display: inline-block;
+
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+      .container p span.TypeCursor.typing {
+        animation: none;
+      }
+      @keyframes blink {
+        0% {
+          background-color: #b52032;
+        }
+        49% {
+          background-color: #b52032;
+        }
+        50% {
+          background-color: transparent;
+        }
+        99% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: #b52032;
+        }
+      }
+      /*End of css for typewriter effect*/
+    </style>
+  </head>
+  <body>
+    <div class="logoSection">
+      <img class="logoImage" src="../image/logo.png" />
+      <h4 class="logoTitle">MedCare</h4>
+    </div>
+    <img class="triangbg" src="../image/triang.svg" />
+    <img class="spImg" src="../image/pharmacyreg5.png" />
+    <p class="TypeWriter">
+      <span class="typed-text"></span><span class="TypeCursor">&nbsp;</span>
+    </p>
+    <div style="padding: 50px;">
+      <div class="container">
+        <br />
+        <br />
+        <form>
+          <h3 style="text-align: center; font-weight: bold; color: #b52032;">
+            Registration
+          </h3>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Id</label>
+            <input type="email" class="form-control" id="email" disabled />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="Address"></textarea>
+          </div>
+
+          <div class="dropdown" style="width: 250px; display: inline-block;">
+            <label for="address">Place :</label>
+            <select class="browser-default custom-select" id="selected">
+              <option selected>Select your Place</option>
+              <option class="dropdown-item" href="#">Mysore</option>
+              <option class="dropdown-item" href="#">Mumbai</option>
+
+              <option class="dropdown-item" href="#">Udupi</option>
+              <option class="dropdown-item" href="#">Banglore</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Location Link</label>
+            <input
+              type="text"
+              class="form-control"
+              id="locationlink"
+              data-toggle="tooltip"
+              title="Note:- 1) Go to Google Maps
+			  2) Search for your location &nbsp; 
+			  3) Click on share button 
+			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  &nbsp;&nbsp;4) Copy and paste the link in the 'Location Link'"
+            />
+          </div>
+          <table class="table table-borderless">
+            <tr>
+              <td colspan="2"><b>Asprin</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio1"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio1"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Benadryl</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio12"
+                    name="optradio2"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio12"
+                    name="optradio2"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Ibuprofen</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio13"
+                    name="optradio3"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio13"
+                    name="optradio3"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Lisinopril</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio14"
+                    name="optradio4"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio14"
+                    name="optradio4"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Morphine</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio15"
+                    name="optradio5"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio15"
+                    name="optradio5"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Paracetamol</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio16"
+                    name="optradio6"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio16"
+                    name="optradio6"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Sinarest</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio17"
+                    name="optradio7"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio17"
+                    name="optradio7"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Strepsil</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio17"
+                    name="optradio8"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio17"
+                    name="optradio8"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Vicks</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio9"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio9"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><b>Vitamin C</b></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio10"
+                    value="1"
+                  />Available
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio10"
+                    value="0"
+                  />Unavailable
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="
+              margin-left: 37%;
+              border-radius: 15px;
+              width: 150px;
+              background-color: #eb2f4b;
+              border-color: #f0909b;
+            "
+            onclick="addtofirebase()"
+          >
+            Submit
+          </button>
+        </form>
+        <br />
+        <br />
+      </div>
+    </div>
+    <!-- Script for typewriter effect -->
+    <script>
+      const TypingText = document.querySelector(".typed-text");
+      const AutoTyping = document.querySelector(".TypeCursor");
+
+      const textArray = [
+        "Register with MedCare.",
+        "Update your medicine availibility.",
+      ];
+      const typingDelay = 200;
+      const erasingDelay = 100;
+      const newTextDelay = 500;
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+    <!-- End of script for typewriter -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+        authDomain: "medcare-4f46f.firebaseapp.com",
+        databaseURL: "https://medcare-4f46f.firebaseio.com",
+        projectId: "medcare-4f46f",
+        storageBucket: "medcare-4f46f.appspot.com",
+        messagingSenderId: "84945406511",
+        appId: "1:84945406511:web:45f9ab0e95339100f914da",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+      var passedvalue = "";
+      $(document).ready(function () {
+        /*var url = new URL(window.location.href);
+
+    var query_string = url.search;
+
+    var search_params = new URLSearchParams(query_string);*/
+
+        passedvalue = sessionStorage.getItem("userEmail");
+
+        var emailreceived = (document.getElementById(
+          "email"
+        ).value = passedvalue);
+      });
+    </script>
+    <script type="text/javascript" src="js/pharmacy.js"></script>
+  </body>
+</html>

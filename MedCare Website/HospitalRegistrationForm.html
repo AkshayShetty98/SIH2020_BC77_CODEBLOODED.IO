@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+  rel="stylesheet"
+/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries --> 
+
+<script>
+	var imagepicture="";
+	var filepicture="";
+
+
+       
+  function addtofirebase()
+  {
+
+  var name = document.getElementById("name").value;
+  console.log(name);
+  var number = document.getElementById("num").value;
+    console.log(number);
+  var email =document.getElementById("email").value;
+    console.log(email);
+  var address = document.getElementById("Address").value;
+    console.log(address);
+  var website = document.getElementById("website").value;
+    console.log(website);
+  var loc = document.getElementById("selected").value;
+    console.log(loc);
+  var locationlink = document.getElementById("locationlink").value;
+    console.log(locationlink);
+    var Lat = document.getElementById("Latitude").value;
+    console.log("Lat")
+    var Long = document.getElementById("Longitude").value;
+    console.log("")
+  var facilities = document.getElementById("facilities").value;
+    console.log(facilities);
+  var description =  document.getElementById("Description").value;
+    console.log(description);
+
+   var type = document.getElementById("type").value;
+
+
+
+ if (name.length == 0 || number.length == 0 || email.length == 0 || address.length == 0 || website.length == 0 || loc.length == 0 || locationlink.length == 0 || facilities.length == 0 || description.length == 0  || type.length==0 )
+ 	  { 
+         window.alert("All the fields are required");
+    }
+    else
+    {
+
+
+  		//New Hospital Node Created
+		var ref = firebase.database().ref().child("Hospital").child(loc).child(name);
+
+
+
+		  ref.on("value", function(snapshot) {
+		   ref.child("Name").set(name);
+		});
+
+       ref.on("value", function(snapshot) {
+       ref.child("Lat").set(Lat);
+    });
+
+        ref.on("value", function(snapshot) {
+       ref.child("Long").set(Long);
+    });
+
+		    ref.on("value", function(snapshot) {
+		   ref.child("Contact").set(number);
+		});
+
+		      ref.on("value", function(snapshot) {
+		   ref.child("Email").set(email);
+		});
+
+		        ref.on("value", function(snapshot) {
+		   ref.child("Address").set(address);
+		});
+
+		          ref.on("value", function(snapshot) {
+		   ref.child("Website").set(website);
+		});
+
+		            ref.on("value", function(snapshot) {
+		   ref.child("Location").set(loc);
+		});
+
+		              ref.on("value", function(snapshot) {
+		   ref.child("Loc").set(locationlink);
+		});
+
+		                ref.on("value", function(snapshot) {
+		   ref.child("Facilities").set(facilities);
+		});
+
+		                  ref.on("value", function(snapshot) {
+		   ref.child("About").set(description);
+		});
+
+		                    ref.on("value", function(snapshot) {
+		   ref.child("Photo").set(imagepicture);
+		});
+
+		                      ref.on("value", function(snapshot) {
+		   ref.child("Certificate").set(filepicture);
+		});
+
+		 ref.on("value", function(snapshot) {
+		   ref.child("Type").set(type);
+		});
+
+     var support = document.getElementById("Support");
+     if (support.checked) 
+     {
+       ref.on("value", function(snapshot) {
+       ref.child("COVID").set(1);
+
+            });
+   }
+     else{
+        ref.on("value", function(snapshot) {
+       ref.child("COVID").set(0);
+          });
+     }
+
+        var cardiologist = document.getElementById("Cardiologist");
+        if (cardiologist.checked) {
+
+           ref.on("value", function(snapshot) {
+		   ref.child("Cardiologist").set(1);
+		});
+        }
+        else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Cardiologist").set(0);
+		});
+        }
+
+        var ent = document.getElementById("ENT");
+          if (ent.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("ENT").set(1);
+		});
+        }
+         else
+        {
+
+           ref.on("value", function(snapshot) {
+		   ref.child("ENT").set(0);
+		});
+        	
+        }
+
+
+        var ontologist = document.getElementById("Ontologist");
+          if (ontologist.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("Ontologist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Ontologist").set(0);
+		});
+        	
+        }
+
+        var physiotherapist = document.getElementById("Physiotherapist");
+          if (physiotherapist.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("Physiotherapist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Physiotherapist").set(0);
+		});
+        	
+        }
+
+		var dentist = document.getElementById("Dentist");
+		  if (dentist.checked) {
+		  	 ref.on("value", function(snapshot) {
+		   ref.child("Dentist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Dentist").set(0);
+		});
+        	
+        }
+
+        var gynaccologist = document.getElementById("Gynaccologist");
+          if (gynaccologist.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("Gynaecologist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Gynaecologist").set(0);
+		});
+        	
+        }
+
+        var orthopediatrist = document.getElementById("Orthopediatrist");
+          if (orthopediatrist.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("Orthopediatrist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Orthopediatrist").set(0);
+		});
+        	
+        }
+
+        var neurologist = document.getElementById("Neurologist");
+          if (neurologist.checked) {
+          	 ref.on("value", function(snapshot) {
+		   ref.child("Neurologist").set(1);
+		});
+        }
+         else
+        {
+           ref.on("value", function(snapshot) {
+		   ref.child("Neurologist").set(0);
+		});
+        	
+        }
+
+  }
+var hospitalnames=0;
+  var refmap = firebase.database().ref().child("Hospital").child("loc");
+  refmap.on("value", function (snapshot) {
+     var data = snapshot.val();
+     Object.entries(data).forEach((entry) => {
+    hospitalnames=hospitalnames+1;
+
+
+     
+  });
+
+});
+
+setTimeout(function(){
+
+var refassign = firebase.database().ref().child("Hospital").child("map").child(loc).child("features").child(hospitalnames);
+
+refassign.child("geometry").child("coordinates").child("0").set(Lat)
+refassign.child("geometry").child("coordinates").child("1").set(Long)
+refassign.child("geometry").child("types").set("Point")
+
+refassign.child("properties").child("description").set(description)
+refassign.child("properties").child("hours").set("24 Hours")
+refassign.child("properties").child("name").set(name)
+refassign.child("properties").child("phone").set(number)
+
+
+       refassign.on("value", function(snapshot) {
+       refassign.child("type").set("Feature");
+    });
+}, 2000);
+
+//}
+
+  
+  
+  setTimeout(function(){ 
+  	window.location.href="AppointmentNew.html"; }, 5000);
+
+
+}
+
+
+
+
+</script>
+  <style type="text/css">
+  	body
+  	{
+  		font-family: 'Kanit';
+  	}
+  	@media (min-width: 1200px) {
+    .container{
+        max-width: 800px;
+        margin-right:0;
+        -webkit-box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.75);
+		box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.75);
+    }
+    .form-control{
+    	border-color: #f0909b;
+    	border-radius: 15px;
+    }
+    label{
+    	font-weight: bold;
+    }
+
+    .triangbg{
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    .logoSection {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        width: 50%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        border-radius: 0;
+        margin-left: 2%;
+        margin-top: 3%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 1%;
+        margin-top: 3%;
+        color: white;
+      }
+
+      .regSpImg{
+        position: absolute;
+        top:200px;
+        height: 60%;
+      }
+       /* css for typewriter effect */
+
+       .TypeWriter {
+        position: absolute;
+        top:150px;
+        left: 20px;
+        font-size: 26px;
+        opacity: 100%;
+      }
+      .typed-text {
+        color: #b52032;
+      }
+      p span.TypeCursor {
+        display: inline-block;
+
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+      .container p span.TypeCursor.typing {
+        animation: none;
+      }
+      @keyframes blink {
+        0% {
+          background-color: #b52032;
+        }
+        49% {
+          background-color: #b52032;
+        }
+        50% {
+          background-color: transparent;
+        }
+        99% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: #b52032;
+        }
+      }
+      /*End of css for typewriter effect*/
+
+}
+  </style>
+  <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</head>
+<body >
+    <div class="logoSection">
+        <img class="logoImage" src="image/logo.png" />
+        <h4 class="logoTitle">MedCare</h4>
+      </div>
+
+    <img class="triangbg" src="image/triang.svg"/>
+    <img class="regSpImg" src="image/HospitalRegImg.svg"/>
+    <p class="TypeWriter">
+       <span class="typed-text"></span
+        ><span class="TypeCursor">&nbsp;</span>
+      </p>
+	<div style="padding: 50px">
+
+	<div class="container" style="background-color: white;border-radius: 30px">
+
+		
+		<form style="padding: 40px">
+			<h3 style="text-align: center;font-weight: bold;color: #b52032;
+        ">Registration</h3>
+        <br>
+			<div class="form-group">
+			  <label for="name">Name:</label>
+			  <input type="text" class="form-control" id="name">
+			</div>
+
+			<div class="form-group">
+			  <label for="file">Certficate of Authenticty</label>
+			  <input type="file" class="form-control" id="file">
+			</div>
+			<div class="dropdown" style='width:250px;display: block;'>
+				<label for="type">Type :
+			    <select class="browser-default custom-select" id="type">
+			      <option selected>Choose Type</option>
+			      <option class="dropdown-item" href="#">Private</option>
+			      <option class="dropdown-item" href="#">Government</option>
+			    </select>
+		
+			  </div>
+		
+			<div class="form-group">
+			  <label for="image">Hospital's Image</label>
+			  <input type="file" class="form-control" id="image">
+			</div>
+			<div class="form-group">
+			  <label for="num">Phone No.</label>
+			  <input type="number" class="form-control" id="num">
+			</div>
+			<div class="form-group">
+			  <label for="email">Email Id</label>
+			  <input type="email" class="form-control" id="email" disabled>
+			</div>
+			<div class="form-group">
+			  <label for="website">website</label>
+			  <input type="text" class="form-control" id="website">
+			</div>
+
+			<div class="form-group">
+			  <label for="address">Address</label>
+			  <textarea class="form-control" id="Address"></textarea>
+			</div>
+
+			
+			<div class="dropdown" style='width:250px;display: inline-block;'>
+				<label for="address">Location :
+			    <select class="browser-default custom-select" id="selected">
+			      <option selected>Select your Location</option>
+			      <option class="dropdown-item" href="#">Udupi</option>
+			      <option class="dropdown-item" href="#">Mumbai</option>
+             <option class="dropdown-item" href="#">Navi Mumbai</option>
+			      <option class="dropdown-item" href="#">Pune</option>
+             <option class="dropdown-item" href="#">Hyderabad</option>
+              <option class="dropdown-item" href="#">Chennai</option>
+			      <option class="dropdown-item" href="#">Thiruvananthapuram</option>
+			    </select>
+		
+			  </div>
+			  
+
+			<div class="form-group">
+			  <label for="location">Location Link</label>
+			  <input type="text" class="form-control" id="locationlink" data-toggle="tooltip" title="Note:- 1) Go to Google Maps
+			  2) Search for your location &nbsp; 
+			  3) Click on share button 
+			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  &nbsp;&nbsp;4) Copy and paste the link in the 'Location Link'">
+			</div>
+
+      <div class="form-group">
+        <label for="num">Latitude</label>
+        <input type="number" class="form-control" id="Latitude">
+      </div>
+
+      <div class="form-group">
+        <label for="num">Longitude</label>
+        <input type="number" class="form-control" id="Longitude">
+      </div>
+			<div class="form-group">
+			<label for="facilities">Facilities</label>
+			<input type="text" name="text" id="facilities" class="form-control">
+			</div>
+      <label>COVID_19 Support</label>
+      <table class="table table-borderless">
+        <tr>
+          <td>
+            <div class="checkbox">
+          <input type="checkbox" value="" id="Support">
+          <label>yes</label>
+          </div></td>
+
+          <td>
+            <div class="checkbox">
+          <input type="checkbox" value="" id="Support">
+          <label>No</label>
+          </div>
+          </td>
+        </tr>
+      </table>
+          
+          
+				<label>Specialization</label>
+			
+			<table class="table table-borderless">
+				<tr>
+					<td>
+						<div class="checkbox">
+						  <input type="checkbox" value="" id="Cardiologist">
+						  <label>Cardiologist</label>
+						</div>
+					</td>
+						<td>
+										
+						<div class="checkbox">
+							<input type="checkbox" value="" id="ENT">
+						  <label>ENT</label>
+						</div>
+						</td>
+						<td>
+									
+						<div class="checkbox">
+							<input type="checkbox" value="" id="Ontologist">
+						  <label>Ontologist</label>
+						</div>	
+						</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox">
+						  <input type="checkbox" value="" id="Physiotherapist">
+						  <label>Physiotherapist</label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						  <input type="checkbox" value="" id="Dentist">
+						  <label>Dentist</label>
+						</div>	
+					</td>
+					<td>
+						<div class="checkbox">
+							<input type="checkbox" value="" id="Gynaccologist">
+						  <label>Gynaccologist</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox">
+			  			<input type="checkbox" value="" id="Orthopediatrist">
+			  			<label>Orthopediatrist</label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+
+						  <input type="checkbox" value="" id="Neurologist">
+						  <label>Neurologist</label>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div class="form-group">
+			  <label for="Description">Description</label>
+			  <textarea class="form-control" id="Description"></textarea>
+			</div>
+		
+
+			<button type="button" class="btn btn-primary" style="margin-left: 37%;border-radius: 15px;width: 150px;background-color:#eb2f4b; border-color:#f0909b; " onclick="addtofirebase()">Submit</button>
+			<br>
+			<br>	
+		</form>
+	</div>
+</div>
+
+  <!-- Script for typewriter effect -->
+  <script>
+    const TypingText = document.querySelector(".typed-text");
+    const AutoTyping = document.querySelector(".TypeCursor");
+
+    const textArray = [
+      "Register with MedCare.",
+      "Provide valid certificate.",
+      "Describe your facilities",
+      
+    ];
+    const typingDelay = 200;
+    const erasingDelay = 100;
+    const newTextDelay = 500;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if (!AutoTyping.classList.contains("typing"))
+          AutoTyping.classList.add("typing");
+        TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        AutoTyping.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        if (!AutoTyping.classList.contains("typing"))
+          AutoTyping.classList.add("typing");
+        TypingText.textContent = textArray[textArrayIndex].substring(
+          0,
+          charIndex - 1
+        );
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        AutoTyping.classList.remove("typing");
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+  </script>
+  <!-- End of script for typewriter -->
+	<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+
+	<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+    authDomain: "medcare-4f46f.firebaseapp.com",
+    databaseURL: "https://medcare-4f46f.firebaseio.com",
+    projectId: "medcare-4f46f",
+    storageBucket: "medcare-4f46f.appspot.com",
+    messagingSenderId: "84945406511",
+    appId: "1:84945406511:web:45f9ab0e95339100f914da"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+// for uploading for image of hospital
+  var imageBtn = document.getElementById('image');
+
+imageBtn.addEventListener('change', function(e)
+{
+	var fileimage =e.target.files[0];
+	var storage = firebase.storage();
+
+// Create a storage reference from our storage service
+var storageRef = firebase.storage().ref(""+fileimage.name);
+
+        var task = storageRef.put(fileimage);
+        setTimeout(function(){ 
+
+        	 storageRef.getDownloadURL().then(function(url) {
+        	imagepicture=url;
+        	console.log(imagepicture)
+        	 }, 7000);
+       
+
+
+        });
+
+});
+
+// for uploading certificate of hospital
+var fileBtn = document.getElementById('file');
+
+fileBtn.addEventListener('change', function(e)
+{
+	var file =e.target.files[0];
+	var storage = firebase.storage();
+	console.log(file)
+
+// Create a storage reference from our storage service
+var storageRef = firebase.storage().ref(""+file.name);
+
+        var task = storageRef.put(file);
+        setTimeout(function(){ 
+        	  storageRef.getDownloadURL().then(function(url) {
+        	filepicture=url;
+        	console.log(filepicture)
+        });
+
+         }, 7000);
+      
+});
+
+  </script>
+    <script type="text/javascript">
+    var passedvalue="";
+    
+    var emailreceived="";
+$(document).ready(function(){
+  
+  /*var url = new URL(window.location.href);
+
+    var query_string = url.search;
+
+    var search_params = new URLSearchParams(query_string); 
+
+     passedvalue = search_params.get('email');*/
+
+
+
+  var emailreceived= sessionStorage.getItem("userEmail1");
+  document.getElementById("email").value= emailreceived;
+ 
+
+});
+
+        
+  </script>
+</body>
+</html> 

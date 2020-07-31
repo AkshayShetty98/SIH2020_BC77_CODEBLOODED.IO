@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function hospital() {
+        window.location.href = "signinakki.html";
+      }
+      function pathologylab() {
+        window.location.href = "Pharmacy/signinPharmacy.html";
+      }
+      function bloodbank() {
+        window.location.href = "BloodBank/signinBloodBank.html";
+      }
+      function camps() {
+        window.location.href = "Camps/campsNew.html";
+      }
+    </script>
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      .row {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        font-family: "Kanit";
+        overflow: hidden;
+      }
+      #imagelogo {
+        margin-top: 68%;
+        margin-left: 19.5%;
+        width: 25%;
+      }
+      #title {
+        margin-left: 16%;
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+      #titleinfo {
+        color: white;
+        font-weight: lighter;
+        margin-left: 6%;
+        opacity: 80%;
+      }
+      #login {
+        margin-left: 39%;
+        margin-top: 0;
+        color: #f0909b;
+      }
+
+      #button {
+        background-color: #4E81A7;
+        color: white;
+        border-radius: 30px;
+        padding: 12px;
+        width: 150px;
+
+        font-size: 16px;
+        border-color: #afcde6;
+        border-style: solid;
+        opacity: 50%;
+        transition: all 150ms linear;
+        margin-right: 10px;
+      }
+
+      #button:hover {
+        background-color: #e8384d;
+        width: 200px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        border-color: #e8384d;
+        border-style: solid;
+        opacity: 100%;
+        -webkit-box-shadow: 0px 0px 5px 2px #e8384d;
+        -moz-box-shadow: 0px 0px 5px 2px#e8384d;
+        box-shadow: 3px 4px 3px 0px rgb(127, 104, 106);
+        transition: all 250ms linear;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two equal columns that floats next to each other */
+      .column0 {
+        float: left;
+        width: 28%;
+        padding: 10px;
+        background: url(image/wave2c.svg);
+      }
+      .column1 {
+        float: left;
+        width: 72%;
+        padding: 10px;
+      }
+
+      .column1cont {
+        margin-top: 3%;
+      }
+
+      #vectimg {
+        margin-left: 65%;
+        opacity: 85%;
+      }
+
+      #vectimg2 {
+        margin-left: -10%;
+        opacity: 65%;
+      }
+
+      /* image rotation */
+      @keyframes spin {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        from {
+          -webkit-transform: rotateY(0deg);
+        }
+        to {
+          -webkit-transform: rotateY(360deg);
+        }
+      }
+      .imageSpin {
+        animation-name: spin;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        -webkit-animation-name: spin;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column0">
+        <img src="image/logo.png" id="imagelogo" class="imageSpin" />
+        <h3 id="title">MedCare</h3>
+        <p id="titleinfo">One stop health platform</p>
+      </div>
+      <div class="column1">
+        <img id="vectimg2" src="image/vect2.jpg" />
+        <div class="column1cont">
+          <h4 id="login">Login / SignUp as</h4>
+          <div
+            style="
+              display: inline;
+              float: left;
+              margin-bottom: 7px;
+              margin-left: 155px;
+            "
+          >
+            <button type="button" id="button" onclick="hospital()">
+              Hospital
+            </button>
+            <button type="button" id="button" onclick="bloodbank()">
+              Blood Bank
+            </button>
+            <button type="button" id="button" onclick="pathologylab()">
+              Pharmacy
+            </button>
+            <button type="button" id="button" onclick="camps()">Camps</button
+            ><br />
+          </div>
+        </div>
+        <img id="vectimg" src="image/vect1a.jpg" />
+      </div>
+    </div>
+  </body>
+</html>

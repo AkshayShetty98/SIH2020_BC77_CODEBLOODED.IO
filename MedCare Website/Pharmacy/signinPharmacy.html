@@ -1,0 +1,321 @@
+<html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        font-family: "Kanit";
+        width: 100vw;
+        height: 100vh;
+        background: url(../image/wave3c.svg);
+        display: flex;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sectionLeft {
+        flex: 1;
+      }
+
+      .logoSection {
+        display: flex;
+        width: 50%;
+        opacity: 88%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        margin-left: 3%;
+        margin-top: 2%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 2%;
+        margin-top: 3%;
+        color: white;
+      }
+
+      .specialImage {
+        position: absolute;
+        top: 70;
+        left: 50;
+      }
+
+      .sectionRight {
+        flex: 1;
+      }
+      .container {
+        position: absolute;
+        bottom: 180;
+        right: 100;
+        width: 25vw;
+        border: 1px solid transparent;
+        border-radius: 15px;
+        box-shadow: 1px 1px 2px 1px grey, -4px -4px 2px 1px grey;
+      }
+      h1 {
+        color: white;
+        margin-top: 5%;
+        margin-left: 15%;
+      }
+
+      .btn-primary {
+        margin-left: 220px;
+      }
+
+      .button {
+        background-color: white;
+        border-radius: 30px;
+        padding: 4px;
+        width: 90px;
+        color: white;
+        margin-left: 65%;
+        margin-bottom: 3%;
+        background: grey;
+        align-self: center;
+        font-size: 18px;
+        border-color: grey;
+        border-style: solid;
+        transform: all 150s linear;
+      }
+
+      .button:hover {
+        letter-spacing: 1px;
+        background: #b52032;
+        border-color: #b52032;
+        outline: none;
+        transform: all 250s linear;
+        box-shadow: 1px 1px 0px 1px #cfa3a8;
+      }
+
+      #login {
+        text-align: center;
+        margin-top: 20px;
+        color: #b52032;
+      }
+      .form-control {
+        border-radius: 120px;
+      }
+
+      p {
+        opacity: 75%;
+        font-weight: lighter;
+        text-align: center;
+      }
+      .form-control:focus {
+        outline: none !important;
+        border: 1px solid #b52032;
+        box-shadow: 0 0 4px transparent;
+      }
+
+      #imagelogo {
+        margin-left: 38%;
+        margin-top: 30px;
+      }
+
+      /* css for typewriter effect */
+
+      .TypeWriter {
+        margin-top: 13%;
+        margin-left: 15%;
+        font-size: 26px;
+        opacity: 100%;
+      }
+      .typed-text {
+        color: #b52032;
+      }
+      p span.TypeCursor {
+        display: inline-block;
+
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+      .container p span.TypeCursor.typing {
+        animation: none;
+      }
+      @keyframes blink {
+        0% {
+          background-color: #b52032;
+        }
+        49% {
+          background-color: #b52032;
+        }
+        50% {
+          background-color: transparent;
+        }
+        99% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: #b52032;
+        }
+      }
+      /*End of css for typewriter effect*/
+
+      /* media quieres */
+      @media (max-width: 1260px) {
+        body {
+          background-position-x: -40px;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        body {
+          background-position-x: -75px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        body {
+          background-position-x: -200px;
+        }
+        .container {
+          width: 30vw;
+        }
+
+        .TypeWriter {
+          font-size: 23px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+        .specialImage {
+          width: 48%;
+          left: -20;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sectionLeft">
+      <div class="logoSection" onclick="homepage()">
+        <img class="logoImage" src="../image/logo.png" />
+        <h4 class="logoTitle">MedCare</h4>
+      </div>
+      <h1>MedCare for Pharmacy.</h1>
+      <img class="specialImage" src="../image/pharmasp.png" />
+    </div>
+
+    <div class="sectionRight">
+      <p class="TypeWriter">
+        MedCare <span class="typed-text"></span
+        ><span class="TypeCursor">&nbsp;</span>
+      </p>
+      <div class="container">
+        <h4 id="login">MedCare</h4>
+        <br />
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Email"
+            id="email_field"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            id="password_field"
+          />
+        </div>
+
+        <button class="button" onclick="login()">Login</button>
+        <p>
+          Don't have an account?<u
+            style="cursor: pointer;"
+            onclick="signuppage()"
+            >Sign up</u
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Script for typewriter effect -->
+    <script>
+      const TypingText = document.querySelector(".typed-text");
+      const AutoTyping = document.querySelector(".TypeCursor");
+
+      const textArray = [
+        "helps you monitor the medicine availablity.",
+        "broadcasts your real-time medicine availibilty.",
+        "is available 24/7.",
+        "is easy to use.",
+      ];
+      const typingDelay = 200;
+      const erasingDelay = 100;
+      const newTextDelay = 500;
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+    <!-- End of script for typewriter -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+        authDomain: "medcare-4f46f.firebaseapp.com",
+        databaseURL: "https://medcare-4f46f.firebaseio.com",
+        projectId: "medcare-4f46f",
+        storageBucket: "medcare-4f46f.appspot.com",
+        messagingSenderId: "84945406511",
+        appId: "1:84945406511:web:45f9ab0e95339100f914da",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="js/PharmacySignInOut.js"></script>
+  </body>
+</html>

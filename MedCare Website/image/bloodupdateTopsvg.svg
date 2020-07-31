@@ -1,0 +1,16 @@
+<svg width="1380.0000000000002" height="650" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g stroke="null">
+  <title stroke="null" style="vector-effect: non-scaling-stroke;">background</title>
+  <rect stroke="null" style="vector-effect: non-scaling-stroke;" fill="none" id="canvas_background" height="652" width="1382" y="-1" x="-1"/>
+ </g>
+ <g stroke="null" style="vector-effect: non-scaling-stroke;">
+  <title stroke="null" transform="translate(141.36331176757812,-80.0169677734375) ">Layer 1</title>
+  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+  <g stroke="null" id="svg_23"/>
+  <g stroke="null" id="svg_38">
+   <path stroke="null" id="svg_37" d="m446.046158,731.60589l31.29902,-34.270841c31.091033,-34.713593 94.001034,-102.591166 167.466244,-147.999431c73.673201,-44.965533 158.421559,-66.354896 248.733508,-75.900837c90.103956,-9.988681 186.291459,-7.027087 270.883829,-28.748508c84.904356,-21.057309 158.213578,-66.797632 195.232164,-88.892998l36.810602,-22.538109l133.109979,283.356698l-42.374185,10.694684c-42.374184,10.694683 -127.122541,32.084046 -211.87091,53.473412c-84.748358,21.389364 -169.496726,42.77873 -254.245084,64.168094c-84.748368,21.389366 -169.496725,42.77873 -254.245094,64.168096c-84.748358,21.389363 -169.496715,42.778727 -211.8709,53.47341l-42.374184,10.694683l-66.554991,-141.678353z" fill="#b20432"/>
+  </g>
+ </g>
+</svg>

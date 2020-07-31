@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+	table,tr,th
+	{
+        font-family: 'HP Simplified Regular';
+	}
+	th
+	{
+		color: white;
+		font-weight: unset;
+	}
+	  #imagelogo
+     {
+      margin-left: 47%;
+      margin-top: 30px;
+      height:80px;
+      width: 90px;
+     }
+     button
+     {
+     	border-radius: 12px
+     	
+     }
+
+</style>
+<script type="text/javascript">
+	function signout()
+	{
+		window.location.href="../mainpage.html";
+	}
+</script>
+</head>
+<body>
+<div class="container-fluid" style="background-color: #b52032">
+
+		<img src="image/logo.png" id="imagelogo">
+			
+    <h3 style="text-align: center;color: white;
+        font-family: 'HP Simplified Regular';" >MedCare</h3>
+        <button style="margin-left:1250px;
+          color: white;
+           border: none;
+        font-family: 'HP Simplified Regular';background-color: transparent;" onclick="signout()">Logout</button>
+&nbsp;
+
+	</div>
+	<div class="container" >
+
+		<h2 style="text-align: center;margin-top: 20px;font-family: 'HP Simplified Regular'" id="namesnames"></script></h2>
+	<table border="" id="fire" class="table table-bordered table-hover table-stripped" style="text-align: center;margin-top: 20px;">
+
+		<tr style="background: #b52032">
+			<th>Medicines</th>
+			
+			<th>Available</th>
+			<th>Unavailable</th>
+			<th>Update</th>
+		</tr>
+		<tr>
+			<td>Aspirin</td>
+			<td><input type="radio" value=1 name="Aspirin" id="Asprinpos">Available</td>
+			<td><input type="radio" value=0 name="Aspirin" id="Asprinneg">Unavailable</td>
+			<td><button value="Aspirin" onclick="Update(this.value)">Update</button></td>
+		</tr>
+				<tr>
+			<td>Benadryl</td>
+			<td><input type="radio" value=1 name="Benadryl" id="Benadrylpos">Available</td>
+			<td><input type="radio" value=0 name="Benadryl" id="Benadrylneg">Unavailable</td>
+			<td><button value="Benadryl" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Ibuprofen</td>
+			<td><input type="radio" value=1 name="Ibuprofen" id="Ibuprofenpos">Available</td>
+			<td><input type="radio" value=0 name="Ibuprofen" id="Ibuprofenneg">Unavailable</td>
+			<td><button value="Ibuprofen" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Lisinopril</td>
+			<td><input type="radio" value=1 name="Lisinopril" id="Lisinoprilpos">Available</td>
+			<td><input type="radio" value=0 name="Lisinopril" id="Lisinoprilneg">Unavailable</td>
+			<td><button value="Lisinopril" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Morphine</td>
+			<td><input type="radio" value=1 name="Morphine" id="Morphinepos">Available</td>
+			<td><input type="radio" value=0 name="Morphine" id="Morphineneg">Unavailable</td>
+			<td><button value="Morphine" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Paracetamol</td>
+			<td><input type="radio" value=1 name="Paracetamol" id="Paracetamolpos">Available</td>
+			<td><input type="radio" value=0 name="Paracetamol" id="Paracetamolneg">Unavailable</td>
+			<td><button value="Paracetamol" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Sinarest</td>
+			<td><input type="radio" value=1 name="Sinarest" id="Sinarestpos">Available</td>
+			<td><input type="radio" value=0 name="Sinarest" id="Sinarestneg">Unavailable</td>
+			<td><button value="Sinarest" onclick="Update(this.value)">Update</button></td>
+		</tr>		<tr>
+			<td>Strepsil</td>
+			<td><input type="radio" value=1 name="Strepsil" id="Strepsilpos">Available</td>
+			<td><input type="radio" value=0 name="Strepsil" id="Strepsilneg">Unavailable</td>
+			<td><button value="Strepsil" onclick="Update(this.value)">Update</button></td>
+		</tr>
+				<tr>
+			<td>Vicks</td>
+			<td><input type="radio" value=1 name="Vicks" id="Vickspos">Available</td>
+			<td><input type="radio" value=0 name="Vicks" id="Vicksneg">Unavailable</td>
+			<td><button value="Vicks" onclick="Update(this.value)">Update</button></td>
+		</tr>
+				<tr>
+			<td>Vitamin C</td>
+			<td><input type="radio" value=1 name="Vitamin C" id="Vitamin_Cpos">Available</td>
+			<td><input type="radio" value=0 name="Vitamin C" id="Vitamin_Cneg">Unavailable</td>
+			<td><button value="Vitamin C" onclick="Update(this.value)">Update</button></td>
+		</tr>
+	</table>
+
+	<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+
+	<script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+    authDomain: "medcare-4f46f.firebaseapp.com",
+    databaseURL: "https://medcare-4f46f.firebaseio.com",
+    projectId: "medcare-4f46f",
+    storageBucket: "medcare-4f46f.appspot.com",
+    messagingSenderId: "84945406511",
+    appId: "1:84945406511:web:45f9ab0e95339100f914da"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+<script type="text/javascript">
+		var passedvalue="";
+$(document).ready(function(){
+	
+ /* var url = new URL(window.location.href);
+
+    var query_string = url.search;
+
+    var search_params = new URLSearchParams(query_string); */
+
+     passedvalue = sessionStorage.getItem("userEmail");
+     passedname = sessionStorage.getItem("nameid");
+     	console.log(passedname)
+     document.getElementById("namesnames").innerHTML=passedname;
+
+     var ref1 = firebase.database().ref().child("Pharmacy").child(passedname);
+     ref1.on("value", function(snapshot) {
+				
+				var array = snapshot.val();
+
+				Object.entries(array).forEach(entry => {
+					//Asprin
+					if (entry[0]=="Asprin" && entry[1]==1) 
+					{
+						document.getElementById("Asprinpos").checked = true;
+						
+						
+					}
+					if (entry[0]=="Asprin" && entry[1]==0) 
+					{
+						document.getElementById("Asprinneg").checked = true;
+					
+					}
+
+					//Benadryl
+					if (entry[0]=="Benadryl" && entry[1]==1) 
+					{
+						document.getElementById("Benadrylpos").checked = true;
+					}
+					if (entry[0]=="Benadryl" && entry[1]==0) 
+					{
+						document.getElementById("Benadrylneg").checked = true;
+					}
+
+					//Ibuprofen
+					if (entry[0]=="Ibuprofen" && entry[1]==1) 
+					{
+						document.getElementById("Ibuprofenpos").checked = true;
+					}
+					if (entry[0]=="Ibuprofen" && entry[1]==0)
+					{
+						document.getElementById("Ibuprofenneg").checked = true;
+					}
+
+					//Lisinopril
+					if (entry[0]=="Lisinopril" && entry[1]==1) 
+					{
+						document.getElementById("Lisinoprilpos").checked = true;
+					}
+					if (entry[0]=="Lisinopril" && entry[1]==0)
+					{
+						document.getElementById("Lisinoprilneg").checked = true;
+					}
+
+					//Morphine
+					if (entry[0]=="Morphine" && entry[1]==1) 
+					{
+						document.getElementById("Morphinepos").checked = true;
+					}
+					if (entry[0]=="Morphine" && entry[1]==0)
+					{
+						document.getElementById("Morphineneg").checked = true;
+					}
+					
+					//Paracetamol
+					if (entry[0]=="Paracetamol" && entry[1]==1) 
+					{
+						document.getElementById("Paracetamolpos").checked = true;
+					}
+					if (entry[0]=="Paracetamol" && entry[1]==0)
+					{
+						document.getElementById("Paracetamolneg").checked = true;
+					}
+
+					//Sinarest
+					if (entry[0]=="Sinarest" && entry[1]==1) 
+					{
+						document.getElementById("Sinarestpos").checked = true;
+					}
+					if (entry[0]=="Sinarest" && entry[1]==0) 
+					{
+						document.getElementById("Sinarestneg").checked = true;
+					}
+					
+					//Strepsil
+					if (entry[0]=="Strepsil" && entry[1]==1) 
+					{
+						document.getElementById("Strepsilpos").checked = true;
+					}
+					if (entry[0]=="Strepsil" && entry[1]==0)
+					{
+						document.getElementById("Strepsilneg").checked = true;
+					}
+
+					//vicks
+					if (entry[0]=="Vicks" && entry[1]==1) 
+					{
+						document.getElementById("Vickspos").checked = true;
+					}
+					if (entry[0]=="Vicks" && entry[1]==0)
+					{
+						document.getElementById("Vicksneg").checked = true;
+					}
+
+					//vitaminc
+					if (entry[0]=="Vitamin C" && entry[1]==1) 
+					{
+						document.getElementById("Vitamin_Cpos").checked = true;
+					}
+					if (entry[0]=="Vitamin C" && entry[1]==0)
+					{
+						document.getElementById("Vitamin_Cneg").checked = true;
+					}
+
+
+
+				});
+
+        	
+			});
+
+ 
+
+});
+function Update(nameR)
+	{
+
+		console.log(nameR)
+		var i = document.getElementsByName(nameR);
+		console.log(passedvalue)
+	
+		if(i[0].checked)
+		{
+			var ref = firebase.database().ref().child("Pharmacy").child(passedname);
+			ref.on("value", function(snapshot) {
+		   ref.child(nameR).set(1);
+		});
+		}
+		else if (i[1].checked) 
+		{
+			
+			var ref = firebase.database().ref().child("Pharmacy").child(passedname);
+			ref.on("value", function(snapshot) {
+		   ref.child(nameR).set(0);
+		});
+		}
+		
+	}
+	</script>
+</body>
+</html>

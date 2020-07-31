@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">MedCare</string>
+    <string name="news">News</string>
+    <string name="reminders">Reminders</string>
+    <string name="home">Home</string>
+    <string name="notification">Notifications</string>
+    <string name="my_details">Me</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="pending_appointments">Appointments Status</string>
+    <string name="settings">Settings</string>
+    <string name="about_us">About Us</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share</string>
+    <string name="send">Send</string>
+    <string name="feedback">Feedback</string>
+    <string name="blood_bank">Blood Bank</string>
+    <string name="appointments">Appointments</string>
+    <string name="hospital">Hospital</string>
+    <string name="pharmacy">Pharmacy</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="pathology_lab">Diagnostic Lab</string>
+    <string name="title_activity_settings" translatable="false">Settings</string>
+    <string name="language">Language</string>
+    <string name="camps">Health Camps</string>
+    <string name="maternity">Maternal Care</string>
+    <string name="patient_history">Appointments History</string>
+    <string name="sign_out">Sign out</string>
+
+    <string name="title_medicine_name">Medicine Name</string>
+    <string name="hint_enter_med_name">Enter Medicine</string>
+    <string name="medicine_days">Medicine Days</string>
+    <string name="title_treatment_deadline">Treatment deadline</string>
+    <string name="title_continuous_use">Continuous use</string>
+    <string name="title_reminder">Reminder</string>
+    <string name="new_medicine">NEW MEDICINE</string>
+    <string name="every_day">Every day</string>
+    <string name="no_medicine_added">No Medicine Added</string>
+    <string name="loading_tasks_error">Error while loading medicineAlarms</string>
+    <string name="successfully_saved_me_message">Medicine Added Scuccessfully</string>
+    <string name="reminder_message">It\'s Time to take your medicine</string>
+    <string name="ignored">IGNORED</string>
+    <string name="taken">TAKEN</string>
+    <string name="all">ALL</string>
+    <string name="menu_filter">Filter</string>
+    <string name="all_label">All Medicines</string>
+    <string name="ignore_label">Medicines Ignored</string>
+    <string name="taken_label">Medicine Taken</string>
+    <string name="no_history">No History Found</string>
+    <string name="no_taken_med_history">You have not taken any medicine</string>
+    <string name="no_ignored_history">Well Done</string>
+    <string name="menu_stats">Monthly Report</string>
+    <string name="bmi">BMI</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="save">Save</string>
+    <string name="age_in_years">Age (in years)</string>
+    <string name="height_in_cms">Height (in cms)</string>
+    <string name="weight_in_kgs">Weight (in kgs)</string>
+    <string name="about">About</string>
+    <string name="facilities">Facilities</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="medbot">MedBot</string>
+    <string name="emergency_contact_no" translatable="false">Emergency Contact No.</string>
+    <string name="heart_info" translatable="false">1).If the patient is conscious in distress, move him into a comfortable position\n
+    2)Loosen any tight clothing \n
+    3)Regularly check and make a note of consciousness, breathing, and pulse.</string>
+
+    <string name="heart_detect" translatable="false">Suddenly feels faint or dizzy\n
+        Severe chest pain (persistent and vice-like, spreading up to the jaw and down one or both arms) that does not subside when the patient rests\n
+        Discomfort high in the abdomen (may feel like severe indigestion)\n
+        Breathlessness (patient may be gasping for air)\n
+        Fear (feels an impending sense of doom)\n
+        Pale, gray, clammy, or sweaty skin\n
+        Rapid, weak, and irregular pulse\n
+        Collapses, often without warning\n
+        Possible loss of consciousness</string>
+
+    <string name="snake_info" translatable="false">Move the person beyond striking distance of the snake.\n
+        Have the person lie down with wound below the heart.\n
+        Keep the person calm and at rest, remaining as still as possible to keep venom from spreading.\n
+        Cover the wound with loose, sterile bandage.\n
+        Remove any jewelry from the area that was bitten.\n
+        Remove shoes if the leg or foot was bitten.</string>
+
+    <string name="fracture_info" translatable="false">Stop any bleeding.\nImmobilize the injured area.\nApply ice packs to limit swelling and help relieve pain.\nTreat for shock.
+    </string>
+
+    <string name="identify_fracture" translatable="false">The person is unresponsive, isn\'t breathing or isn\'t moving.\n
+        There is heavy bleeding.\n
+        Even gentle pressure or movement causes pain.\n
+        The limb or joint appears deformed.\n
+        The bone has pierced the skin.\n
+        You suspect a bone is broken in the neck, head or back.</string>
+
+    <string name="burn_info" translatable="false">Cool the burn.\n
+        Remove rings or other tight items.\n
+        Apply lotion.\n
+        Bandage the burn.\n
+        Take a pain reliever. </string>
+    <string name="quick_access" translatable="false">Quick Access</string>
+    <string name="appwidget_text" translatable="false">EXAMPLE</string>
+    <string name="add_widget" translatable="false">Add widget</string>
+    <string name="health_schemes" translatable="false">Health Schemes</string>
+
+    //MapStrings
+
+    <string name="access_token" translatable="false">pk.eyJ1IjoiY29kZXNhaXlhbiIsImEiOiJjazV6MzZxOTcybmdyM2VtcW90dHY1M2NvIn0.MUmqimcXZPmFXY3cB7d_ug</string>
+    <string name="purple_map_style" translatable="false">mapbox://styles/mapbox/cj7bww7is2f4i2rnwyxkzpwu7</string>
+    <string name="blue_map_style" translatable="false">mapbox://styles/mapbox/cj7bwwv3caf7l2spgukxm8bwv</string>
+    <string name="terminal_map_style" translatable="false">mapbox://styles/mapbox/cj62n87yx3mvi2rp93sfp2w9z</string>
+    <string name="map_view" translatable="false">Map view</string>
+    <string name="failure_to_load_file" translatable="false">Failure to load the local file of locations. Please try reloading the app.</string>
+    <string name="mock_location_title" translatable="false">Fake device location</string>
+    <string name="select_a_theme" translatable="false">Tap on a theme</string>
+    <string name="no_internet_message" translatable="false">Route drawing not possible because there\'s no internet connection!</string>
+    <string name="failure_to_retrieve" translatable="false">Failure to retrieve the navigation route!</string>
+
+    <!-- Single card -->
+    <string name="hours" translatable="false">Hours</string>
+    <string name="phone" translatable="false">Phone</string>
+    <string name="distance" translatable="false">mi</string>
+    <string name="covid19">COVID19</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">मेड-केयर</string>
+    <string name="news">समाचार</string>
+    <string name="reminders">स्मरणपत्र</string>
+    <string name="home">होम</string>
+    <string name="notification">सूचनाएं</string>
+    <string name="my_details">मैं</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="action_settings">समायोजन</string>
+    <string name="pending_appointments">अपूर्ण नियुक्ति</string>
+    <string name="settings">समायोजन</string>
+    <string name="about_us">हमारे बारे में</string>
+    <string name="communicate">संवाद</string>
+    <string name="share">शेयर</string>
+    <string name="send">भेजें</string>
+    <string name="feedback">पुनर्निवेश</string>
+    <string name="blood_bank">रक्त कोष</string>
+    <string name="appointments">नियुक्ति</string>
+    <string name="hospital">अस्पताल</string>
+    <string name="pharmacy">औषधालय</string>
+    <string name="ambulance">रोगी वाहन</string>
+    <string name="pathology_lab">विकृति विज्ञान</string>
+    <string name="language">भाषा</string>
+    <string name="camps">स्वास्थ्य शिविर</string>
+    <string name="maternity">मातृ देखभाल</string>
+    <string name="patient_history">मरीज का इतिहास</string>
+    <string name="sign_out">लॉग आउट</string>
+
+    <string name="title_medicine_name">दवा का नाम</string>
+    <string name="hint_enter_med_name">दवा दर्ज करें</string>
+    <string name="medicine_days">चिकित्सा के दिन</string>
+    <string name="title_treatment_deadline">उपचार की समय सीमा</string>
+    <string name="title_continuous_use">निरंतर उपयोग</string>
+    <string name="title_reminder">अनुस्मारक</string>
+    <string name="new_medicine">नई दवा</string>
+    <string name="every_day">हर दिन</string>
+    <string name="no_medicine_added">कोई दवा नहीं जोड़ी गई</string>
+    <string name="loading_tasks_error">दवाई अलार्म को लोड करते समय त्रुटि</string>
+    <string name="successfully_saved_me_message">दवा सफलतापूर्वक जोड़ा गया</string>
+    <string name="reminder_message">आपकी दवा लेने का समय आ गया है</string>
+    <string name="ignored">उपेक्षित</string>
+    <string name="taken">लिया</string>
+    <string name="all">सब</string>
+    <string name="menu_filter">छानना</string>
+    <string name="all_label">सभी दवाएं</string>
+    <string name="ignore_label">दवाओं को नजरअंदाज कर दिया</string>
+    <string name="taken_label">दवाई ली</string>
+    <string name="no_history">कोई इतिहास नहीं मिला</string>
+    <string name="no_taken_med_history">आपने कोई दवा नहीं ली है</string>
+    <string name="no_ignored_history">बहुत बढ़िया</string>
+    <string name="menu_stats">मासिक रिपोर्ट</string>
+    <string name="bmi">बीएमआई</string>
+    <string name="blood_group">रक्त समूह</string>
+    <string name="save">संचित करे</string>
+    <string name="age_in_years">आयु (वर्षों में)</string>
+    <string name="height_in_cms">लम्बाई (सेंटीमीटर मे)</string>
+    <string name="weight_in_kgs">वजन (किलोग्राम में)</string>
+    <string name="about">के बारे में</string>
+    <string name="facilities">सुविधाएं</string>
+    <string name="book_appointment">निर्धारित तारीख बुक करना</string>
+    <string name="medbot">मेडबोट</string>
+
+</resources>

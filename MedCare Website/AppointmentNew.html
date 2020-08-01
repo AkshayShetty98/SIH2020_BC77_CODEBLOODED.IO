@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/86812388e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <style type="text/css">
+      body {
+        overflow: hidden;
+        background: url(image/wave4c.svg);
+        background-size: cover;
+        background-position-y: -40px;
+        font-family: "Kanit";
+      }
+      .remove {
+        background-color: transparent;
+        border-color: none;
+        border: none;
+        color: white;
+      }
+      /* Table styling */
+      .tab-content {
+        width: 700px;
+        overflow-y: auto;
+        height: 450px;
+      }
+
+      .nav-tabs {
+        border-bottom: 1px solid #b52032;
+        width: 350px;
+      }
+      .nav-item a {
+        color: #495057;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: #007bff;
+        background-color: #fff;
+        border-color: #b52032 #b52032 #fff;
+      }
+
+      th {
+        text-align: center;
+        background-color: #b52032;
+        color: white;
+        position: sticky;
+        top: 0;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      tbody button {
+        border: transparent;
+      }
+
+      i {
+        color: forestgreen;
+      }
+
+      [class="fas fa-times-circle"] {
+        color: crimson;
+      }
+      /* Table styling end */
+      #imagelogo {
+        margin-left: 47%;
+        margin-top: 30px;
+        height: 80px;
+        width: 90px;
+      }
+      button {
+        border-radius: 12px;
+      }
+
+      .logoSection {
+        display: flex;
+        width: 50%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        margin-left: 2%;
+        margin-top: 3%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 1%;
+        margin-top: 3%;
+        color: white;
+      }
+
+      .spImage {
+        position: absolute;
+        height: 60%;
+        bottom: 0;
+        right: 0;
+        opacity: 95%;
+      }
+
+      .spImage2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 95%;
+        z-index: -1;
+      }
+    </style>
+    <script type="text/javascript">
+      function signoutappointment() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="logoSection">
+      <img class="logoImage" src="image/logo.png" />
+      <h4 class="logoTitle">MedCare</h4>
+    </div>
+    <h5
+      onclick="signoutappointment()"
+      style="
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: #b52032;
+        cursor: pointer;
+      "
+    >
+      Log Out
+    </h5>
+    <div class="container">
+      <!-- Nav tabs -->
+      <br />
+      <h3>Welcome, <span style="color: #b52032;" id="HospitalName"></span></h3>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home"
+            >Requested</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#menu1">Accepted</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active">
+          <br />
+          <table class="table table-striped" id="table">
+            <thead>
+              <th style="border-radius: 10px 0px 0px 0px;">Name</th>
+              <th>Appointment Type</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Confirm</th>
+              <th style="border-radius: 0px 10px 0px 0px;">Reject</th>
+            </thead>
+            <tbody>
+              <!-- here the appointments will be inserted via js -->
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="menu1" class="container tab-pane fade">
+          <br />
+          <table class="table table-striped" id="accepted">
+            <thead>
+              <th style="border-radius: 10px 0px 0px 0px;">Name</th>
+              <th>Appointment Type</th>
+              <th>Date</th>
+              <th style="border-radius: 0px 10px 0px 0px;">Time</th>
+            </thead>
+            <tbody>
+              <!-- here the appointments will be inserted via js -->
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <img class="spImage" src="image/appointmentsp3.png" />
+      <img class="spImage2" src="image/triang.svg" />
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+        authDomain: "medcare-4f46f.firebaseapp.com",
+        databaseURL: "https://medcare-4f46f.firebaseio.com",
+        projectId: "medcare-4f46f",
+        storageBucket: "medcare-4f46f.appspot.com",
+        messagingSenderId: "84945406511",
+        appId: "1:84945406511:web:45f9ab0e95339100f914da",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script type="text/javascript" src="js/appointmentNew.js"></script>
+  </body>
+</html>

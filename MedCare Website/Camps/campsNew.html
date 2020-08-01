@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Camps Registration</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!--CSS-->
+    <style type="text/css">
+      body {
+        font-family: "Kanit";
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        background: url(../image/wave3c.svg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sectionLeft {
+        flex: 1;
+      }
+
+      .logoSection {
+        display: flex;
+        width: 50%;
+        opacity: 88%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        margin-left: 3%;
+        margin-top: 2%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 2%;
+        margin-top: 3%;
+        color: white;
+      }
+
+      .specialImage {
+        position: absolute;
+        top: 40px;
+        left: 25px;
+        height: 85%;
+      }
+
+      .sectionRight {
+        flex: 1;
+      }
+
+      h1 {
+        color: white;
+        margin-top: 5%;
+        margin-left: 15%;
+      }
+
+      .form-control:focus {
+        outline: none !important;
+        border: 1px solid #b52032;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        box-shadow: 0 0 4px transparent;
+      }
+
+      .container {
+        max-width: 30%;
+        position: absolute;
+        bottom: 10px;
+        right: 60px;
+        border-radius: 7px;
+        background: white;
+        box-shadow: 1px 1px 2px 1px grey, -4px -4px 2px 1px grey;
+      }
+      .form-group {
+        display: flex;
+      }
+      .form-control {
+        flex: 1.8;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+      }
+      label {
+        margin: auto;
+        font-family: "Kanit";
+        flex: 0.4;
+      }
+
+      .timeAndDateRow {
+        display: flex;
+      }
+
+      .dateSection,
+      .timeSection {
+        flex: 1;
+      }
+
+      .btn {
+        border-radius: 30px;
+        padding: 4px;
+        width: 90px;
+        color: white;
+        margin-left: 38%;
+        align-self: center;
+        font-size: 18px;
+        background: grey;
+        border-color: grey;
+        border-style: solid;
+        transform: all 150s linear;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn:hover {
+        letter-spacing: 1px;
+        background: #b52032;
+        border-color: #b52032;
+        outline: none;
+        transform: all 250s linear;
+        box-shadow: 1px 1px 0px 1px #cfa3a8;
+      }
+
+      #imagelogo {
+        margin-left: 38%;
+        margin-top: 30px;
+      }
+
+      /* css for typewriter effect */
+
+      .TypeWriter {
+        margin-top: 13%;
+        margin-left: 35%;
+        font-size: 26px;
+        opacity: 100%;
+      }
+      .typed-text {
+        color: #b52032;
+      }
+      p span.TypeCursor {
+        display: inline-block;
+
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+      .container p span.TypeCursor.typing {
+        animation: none;
+      }
+      @keyframes blink {
+        0% {
+          background-color: #b52032;
+        }
+        49% {
+          background-color: #b52032;
+        }
+        50% {
+          background-color: transparent;
+        }
+        99% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: #b52032;
+        }
+      }
+      /*End of css for typewriter effect*/
+
+      @media (max-width: 1260px) {
+        body {
+          background-position-x: -40px;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        body {
+          background-position-x: -75px;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        body {
+          background-position-x: -200px;
+        }
+        .container {
+          width: 30vw;
+        }
+
+        .TypeWriter {
+          font-size: 23px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+        .specialImage {
+          width: 48%;
+          left: -20;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      function campregister() {
+        var types = document.getElementById("types").value;
+        console.log(types);
+        var descp = document.getElementById("descp").value;
+        console.log(descp);
+        var links = document.getElementById("links").value;
+        console.log(links);
+        var venues = document.getElementById("venues").value;
+
+        var date = document.getElementById("date").value;
+        console.log(date);
+        var time = document.getElementById("time").value;
+        console.log(time);
+
+        //for sending the details of form in firbase
+        if (
+          types.length == 0 ||
+          descp.length == 0 ||
+          links.length == 0 ||
+          venues.length == 0 ||
+          date.length == 0 ||
+          time.length == 0
+        ) {
+          window.alert("Please fill all the details");
+          document.querySelector("button").disabled = true;
+        } else {
+          //accessing the camps table of database
+          var ref = firebase.database().ref().child("Camps").child(types);
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Type").set(types);
+          });
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Description").set(descp);
+          });
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Link").set(links);
+          });
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Venue").set(venues);
+          });
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Date").set(date);
+          });
+
+          // write camp type
+          ref.on("value", function (snapshot) {
+            ref.child("Time").set(time);
+          });
+
+          window.alert("You have successfully Registered");
+        }
+        setTimeout(function () {
+          window.location.reload();
+        }, 3000);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="sectionLeft">
+      <div class="logoSection">
+        <img class="logoImage" src="../image/logo.png" />
+        <h4 class="logoTitle">MedCare</h4>
+      </div>
+      <h1>MedCare for Camps.</h1>
+      <img class="specialImage" src="../image/campssp.png" />
+    </div>
+
+    <div class="sectionRight">
+      <p class="TypeWriter">
+        <span class="typed-text"></span><span class="TypeCursor">&nbsp;</span>
+      </p>
+      <div class="container">
+        <div class="form-group">
+          <label for="type">Camp </label>
+          <input type="text" class="form-control" id="types" required />
+        </div>
+        <div class="form-group">
+          <label for="type">Venue</label>
+          <input type="text" class="form-control" id="venues" required />
+        </div>
+        <div class="form-group">
+          <label for="data">Date</label>
+          <input
+            class="form-control"
+            type="date"
+            value="0000-00-00"
+            id="date"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="data">Time</label>
+          <input
+            class="form-control"
+            type="time"
+            value="00:00:00"
+            id="time"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="descp">Description</label>
+          <textarea
+            class="form-control"
+            rows="1"
+            id="descp"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="type">Links for registration</label>
+          <input type="text" class="form-control" id="links" required />
+        </div>
+        <div class="form-group">
+          <label for="image">Certificate</label>
+          <input type="file" class="form-control" id="image" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="campregister()">
+          Submit
+        </button>
+
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <!-- Script for typewriter effect -->
+    <script>
+      const TypingText = document.querySelector(".typed-text");
+      const AutoTyping = document.querySelector(".TypeCursor");
+
+      const textArray = [
+        "Register your camps with us.",
+        "Enter a short description.",
+        "Pick a date and venue.",
+      ];
+      const typingDelay = 200;
+      const erasingDelay = 100;
+      const newTextDelay = 500;
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!AutoTyping.classList.contains("typing"))
+            AutoTyping.classList.add("typing");
+          TypingText.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          AutoTyping.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+    <!-- End of script for typewriter -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+        authDomain: "medcare-4f46f.firebaseapp.com",
+        databaseURL: "https://medcare-4f46f.firebaseio.com",
+        projectId: "medcare-4f46f",
+        storageBucket: "medcare-4f46f.appspot.com",
+        messagingSenderId: "84945406511",
+        appId: "1:84945406511:web:45f9ab0e95339100f914da",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // for uploading for image of hospital
+      var imageBtn = document.getElementById("image");
+
+      imageBtn.addEventListener("change", function (e) {
+        var fileimage = e.target.files[0];
+        var storage = firebase.storage();
+
+        // Create a storage reference from our storage service
+        var storageRef = firebase.storage().ref("" + fileimage.name);
+
+        var task = storageRef.put(fileimage);
+        setTimeout(function () {
+          storageRef.getDownloadURL().then(function (url) {
+            imagepicture = url;
+            console.log(imagepicture);
+          }, 7000);
+        });
+      });
+    </script>
+  </body>
+</html>

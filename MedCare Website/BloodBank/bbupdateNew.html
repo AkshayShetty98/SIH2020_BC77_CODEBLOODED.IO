@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BloodBank Store</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/86812388e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <style type="text/css">
+      /* table border rounded styling */
+      table {
+        border-collapse: separate;
+        margin-top: 15%;
+        z-index: 2;
+        border-spacing: 0;
+        min-width: 350px;
+      }
+      table tr th,
+      table tr td {
+        border-right: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        padding: 5px;
+      }
+      table tr th:first-child,
+      table tr td:first-child {
+        border-left: 1px solid #bbb;
+      }
+      table tr th {
+        border-top: 1px solid #bbb;
+        text-align: center;
+      }
+
+      .svgbottom {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        z-index: -5;
+      }
+      .updatesp {
+        position: absolute;
+        height: 90%;
+        bottom: 90px;
+        right: 60px;
+        z-index: -2;
+      }
+      /* top-left border-radius */
+      table tr:first-child th:first-child {
+        border-top-left-radius: 6px;
+      }
+
+      /* top-right border-radius */
+      table tr:first-child th:last-child {
+        border-top-right-radius: 6px;
+      }
+
+      /* bottom-left border-radius */
+      table tr:last-child td:first-child {
+        border-bottom-left-radius: 6px;
+      }
+
+      /* bottom-right border-radius */
+      table tr:last-child td:last-child {
+        border-bottom-right-radius: 6px;
+      }
+      /* table border rounded styling end */
+      table,
+      tr,
+      th {
+        font-family: "Kanit";
+      }
+
+      input {
+        width: 40px;
+        border: transparent;
+      }
+      th {
+        color: white;
+        font-weight: unset;
+      }
+      #imagelogo {
+        margin-left: 47%;
+        margin-top: 30px;
+        height: 80px;
+        width: 90px;
+      }
+      .triangbg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -4;
+      }
+      .logoSection {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        top: 2px;
+        left: 8px;
+        width: 50%;
+      }
+
+      .logoImage {
+        height: 6vh;
+        border-radius: 0;
+        margin-left: 2%;
+        margin-top: 3%;
+      }
+
+      .logoTitle {
+        flex: 1;
+        margin-left: 1%;
+        margin-top: 3%;
+        color: white;
+      }
+      button {
+        background: transparent;
+        border: transparent;
+      }
+    </style>
+    <script type="text/javascript">
+      function signout() {
+        window.location.href = "../mainpageakki.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="logoSection">
+      <img class="logoImage" src="../image/logo.png" />
+      <h4 class="logoTitle">MedCare</h4>
+    </div>
+    <h5
+      onclick="signout()"
+      style="
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: #b52032;
+        cursor: pointer;
+      "
+    >
+      Log Out
+    </h5>
+    <img class="triangbg" src="../image/triang.svg" />
+    <img class="svgbottom" src="../image/bloodupdateTopsvg.svg" />
+    <img class="updatesp" src="../image/bloodupdate.png" />
+    <div class="container">
+      <h2
+        style="
+          text-align: center;
+          margin-top: 20px;
+          font-family: 'Kanit';
+          color: #b52032;
+        "
+        id="namesnames"
+      ></h2>
+
+      <table
+        id="fire"
+        class="table rounded table-hover table-striped"
+        style="text-align: center; margin-top: 60px; max-width: 400px;"
+      >
+        <tr style="background: #b52032;">
+          <th>Blood Groups</th>
+
+          <th>Quantity</th>
+
+          <th>Update</th>
+        </tr>
+        <tr>
+          <td>A+</td>
+          <td><input type="number" name="Apos" id="Apos" /></td>
+
+          <td>
+            <button value="Apos" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>A-</td>
+          <td><input type="number" name="Aneg" id="Aneg" /></td>
+
+          <td>
+            <button value="Aneg" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>AB+</td>
+          <td><input type="number" name="ABpos" id="ABpos" /></td>
+          <td>
+            <button value="ABpos" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>AB-</td>
+          <td><input type="number" name="ABneg" id="ABneg" /></td>
+          <td>
+            <button value="ABneg" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>O+</td>
+          <td><input type="number" name="Opos" id="Opos" /></td>
+          <td>
+            <button value="Opos" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>O-</td>
+          <td><input type="number" name="Oneg" id="Oneg" /></td>
+          <td>
+            <button value="Oneg" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>B+</td>
+          <td><input type="number" name="Bpos" id="Bpos" /></td>
+          <td>
+            <button value="Bpos" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>B-</td>
+          <td><input type="number" name="Bneg" id="Bneg" /></td>
+          <td>
+            <button value="Bneg" onclick="Update(this.value)">
+              <i class="fas fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-storage.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBkKVjMngDnyKU_YcRB-tJB0sXYwhYUvO8",
+        authDomain: "medcare-4f46f.firebaseapp.com",
+        databaseURL: "https://medcare-4f46f.firebaseio.com",
+        projectId: "medcare-4f46f",
+        storageBucket: "medcare-4f46f.appspot.com",
+        messagingSenderId: "84945406511",
+        appId: "1:84945406511:web:45f9ab0e95339100f914da",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+      var passedvalue = "";
+      $(document).ready(function () {
+        /* var url = new URL(window.location.href);
+
+    var query_string = url.search;
+
+    var search_params = new URLSearchParams(query_string); 
+
+     passedvalue = search_params.get('email');*/
+        passedname = sessionStorage.getItem("name");
+
+        document.getElementById("namesnames").innerHTML = passedname;
+
+        var ref1 = firebase
+          .database()
+          .ref()
+          .child("BloodBank")
+          .child(passedname);
+        ref1.on("value", function (snapshot) {
+          var array = snapshot.val();
+
+          Object.entries(array).forEach((entry) => {
+            //ABneg
+            if (entry[0] == "ABneg") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "ABpos") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Aneg") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Bneg") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Bpos") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Oneg") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Opos") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+            if (entry[0] == "Apos") {
+              document.getElementById(entry[0]).value = entry[1];
+            }
+          });
+        });
+      });
+      function Update(nameR) {
+        var i = document.getElementById(nameR).value;
+
+        var ref = firebase
+          .database()
+          .ref()
+          .child("BloodBank")
+          .child(passedname);
+        ref.on("value", function (snapshot) {
+          ref.child(nameR).set(parseInt(i));
+        });
+      }
+    </script>
+  </body>
+</html>

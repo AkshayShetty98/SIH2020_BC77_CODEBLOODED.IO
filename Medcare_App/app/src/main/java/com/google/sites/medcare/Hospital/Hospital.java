@@ -60,7 +60,7 @@ public class Hospital extends AppCompatActivity {
         hospitalCity=getIntent().getStringExtra("SelectedCity");
         hospitalCategory=getIntent().getStringExtra("SelectedCategory");
 
-        spinner=findViewById(R.id.spinner2);
+        /*spinner=findViewById(R.id.spinner2);
         progressBar = findViewById(R.id.progress_bar);
 
         List<String> locations=new ArrayList<>();
@@ -73,9 +73,6 @@ public class Hospital extends AppCompatActivity {
         locations.add("Thiruvananthapuram");
         locations.add("Udupi");
 
-        SharedPreferences mySharedPreferences = this.getSharedPreferences("MYPREFERENCENAME", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = mySharedPreferences.edit();
-
         ArrayAdapter<String> dataAdapter;
         dataAdapter = new ArrayAdapter(this, R.layout.spinner_style, locations);
         dataAdapter.setDropDownViewResource(R.layout.spinner_style);
@@ -84,7 +81,7 @@ public class Hospital extends AppCompatActivity {
 
         //set the default according to value
         int spinnerPosition = dataAdapter.getPosition(loc);
-        spinner.setSelection(spinnerPosition);
+        spinner.setSelection(spinnerPosition);*/
 
         /*spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -109,8 +106,11 @@ public class Hospital extends AppCompatActivity {
             }
         });*/
 
-        /*editor.putString("Speciality",DomainHolder);
-        editor.apply();*/
+        SharedPreferences mySharedPreferences = this.getSharedPreferences("MYPREFERENCENAME", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mySharedPreferences.edit();
+
+        editor.putString("Speciality", hospitalCategory);
+        editor.apply();
 
         HospitalList= findViewById(R.id.myHospRecyclerview);
         HospitalList.setLayoutManager(new LinearLayoutManager(this));
